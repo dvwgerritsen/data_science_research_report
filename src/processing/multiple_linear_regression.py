@@ -13,7 +13,7 @@ df = pd.read_csv(path, sep='\t', engine='python')
 
 # Shows plot
 x = np.array(list(df.get("Income"))).reshape((-1, 1))
-y = np.array(list(df.get("MntWines"))).reshape((-1, 1))
+y = np.array(list(df.get("MntGoldProds"))).reshape((-1, 1))
 plt.scatter(x, y)
 plt.show()
 model = LinearRegression().fit(x, y)
