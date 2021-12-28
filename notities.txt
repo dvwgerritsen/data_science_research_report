@@ -1,0 +1,29 @@
+Algemeen
+--------------------------------------------------------------
+Data preparatie behandelen algemeen
+--------------------------------------------------------------
+
+Per methode
+--------------------------------------------------------------
+Hypothese toevoegen
+Distributie dependent variabele weergeven
+Mean, modus, avg van variabelen toevoegen
+Coefficienten weergeven model
+Intercept weergeven model
+p values
+Plot maken voorspelling
+Evaluaeren tijdens uitwerken
+Conclusie toevoegen
+
+heatmap correlatie
+
+--------------------------------------------------------------
+Per methode een uitleg met voorbeeld en tenminste aandachtpunten voor de
+evaluatie en kenmerkende eigenschappen met consequenties voor data preparatie
+
+Per methode per stap van datapreparatie/selectie en/of aanpassing van parameter
+aangeven welk effect geconstateerd is, welke conclusie voor vervolgstap getrokken
+moet worden
+
+Argumentatie waarom beste model, het beste model is en aantonen dat deze
+conclusie via een juiste evaluatie genomen is
