@@ -10,12 +10,15 @@ Distributie dependent variabele weergeven
 Mean, modus, avg van variabelen toevoegen
 Coefficienten weergeven model
 Intercept weergeven model
-p values
+p values            *
 Plot maken voorspelling
 Evaluaeren tijdens uitwerken
-Conclusie toevoegen
+Conclusie toevoegen     *
 
-heatmap correlatie
+--------------------------------------------------------------
+Logistic
+
+heatmap correlatie uitleg heatmap
 
 --------------------------------------------------------------
 Per methode een uitleg met voorbeeld en tenminste aandachtpunten voor de

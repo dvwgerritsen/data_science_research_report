@@ -17,8 +17,8 @@ path = Path("data/houses.csv")
 df = pd.read_csv(path)
 
 ##Convert Y/N into 1/0
-#df.CentralAir.replace(('Y', 'N'), (1, 0), inplace=True)
-#print(df.CentralAir)
+df.CentralAir.replace(('Y', 'N'), (1, 0), inplace=True)
+print(df.CentralAir)
 
 ##Showing distrubution
 #print(df['CentralAir'].value_counts())
@@ -35,7 +35,7 @@ df = pd.read_csv(path)
 #print("percentage of CentralAir", pct_of_sub*100)
 
 #Select columns make predictor
-columns = ['LotArea']
+columns = ['YearBuilt']
 x = df[columns]
 y = df.CentralAir
 
