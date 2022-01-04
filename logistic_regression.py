@@ -7,10 +7,8 @@ from sklearn.linear_model import LogisticRegression
 import seaborn as sns
 sns.set(style="white")
 sns.set(style="whitegrid", color_codes=True)
-from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score
-import warnings
+
 import numpy as np
 
 path = Path("data/houses.csv")
