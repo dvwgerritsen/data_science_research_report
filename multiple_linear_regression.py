@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 import warnings
 import numpy as np
+from sklearn.tree import DecisionTreeRegressor
 
 warnings.filterwarnings("ignore")
 
@@ -51,3 +52,11 @@ ax.set_xlabel('GarageArea')
 ax.set_ylabel('GrLivArea')
 ax.set_zlabel('Price')
 plt.show()
+
+
+#
+# treeRegressor = DecisionTreeRegressor()
+# treeRegressor.fit(X_train, y_train)
+# y_pred = regressor.predict(X_test)
+#
+# print(r2_score(y_test, y_pred))
