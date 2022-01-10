@@ -5,12 +5,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 path = Path("data/houses.csv")
-df = pd.read_csv("data/houses.csv")
+df = pd.read_csv(path)
 
 
-x = df.iloc[:, 1:2].values
-print(x)
-y = df.iloc[:, 2].values
+x = df[['YearBuilt']]
+y = df['SalePrice']
 
 # Fitting Random Forest Regression to the dataset
 # import the regressor
