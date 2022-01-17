@@ -3,45 +3,36 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
+from sklearn import metrics
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 
 path = Path("data/houses.csv")
 df = pd.read_csv(path)
 
+#print(df.columns.tolist())
+#print(df.)
+columns = ['SalePrice','LotArea', 'YearBuilt', 'YrSold', 'OverallQual', 'OverallCond', 'YearRemodAdd', '1stFlrSF', ]
+X=df[columns]  # Features
+y=df['LotShape']  # Labels
 
-x = df[['YearBuilt']]
-y = df['SalePrice']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
 
-# Fitting Random Forest Regression to the dataset
-# import the regressor
-from sklearn.ensemble import RandomForestRegressor
+clf=RandomForestClassifier(n_estimators=100)
 
-# create regressor object
-regressor = RandomForestRegressor(n_estimators=100, random_state=0)
+clf.fit(X_train,y_train)
 
-# fit the regressor with x and y data
-regressor.fit(x, y)
+y_pred=clf.predict(X_test)
 
-Y_pred = regressor.predict(np.array([6.5]).reshape(1, 1))  # test the output by changing values
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
-# Visualising the Random Forest Regression results
+feature_imp = pd.Series(clf.feature_importances_,index=columns).sort_values(ascending=False)
+feature_imp
 
-# arange for creating a range of values
-# from min value of x to max
-# value of x with a difference of 0.01
-# between two consecutive values
-X_grid = np.arange(min(x), max(x), 0.01)
-
-# reshape for reshaping the data into a len(X_grid)*1 array,
-# i.e. to make a column out of the X_grid value
-X_grid = X_grid.reshape((len(X_grid), 1))
-
-# Scatter plot for original data
-plt.scatter(x, y, color='blue')
-
-# plot predicted data
-plt.plot(X_grid, regressor.predict(X_grid),
-         color='green')
-plt.title('')
-plt.xlabel('')
-plt.ylabel('')
+sns.barplot(x=feature_imp, y=feature_imp.index)
+# Add labels to your graph
+plt.xlabel('Feature Importance Score')
+plt.ylabel('Features')
+plt.title("Visualizing Important Features")
 plt.show()
